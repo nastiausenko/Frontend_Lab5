@@ -107,7 +107,7 @@
 }
 
 .close:hover {
-    color: #ff6b6b;
+    color: red;
 }
 
 .error-message {
