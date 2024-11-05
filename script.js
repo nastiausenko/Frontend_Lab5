@@ -2,6 +2,8 @@ const formContainer = document.getElementById('form-container');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close-modal');
 const data = document.getElementById('data');
+const gridContainer = document.getElementById('grid-container');
+const colorPicker = document.getElementById('color-picker');
 
 
 formContainer.addEventListener('submit', (event) => {
@@ -78,5 +80,58 @@ closeModal.addEventListener('click', () => {
 window.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.style.display = 'none';
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    createTable();
+});
+
+function createTable() {
+    for (let i = 0; i < 6; i++) {
+        const row = document.createElement('tr');
+        for (let j = 0; j < 6; j++) {
+            const cell = document.createElement('td');
+            const cellNumber = i * 6 + j + 1; 
+            cell.textContent = cellNumber;
+
+            cell.addEventListener('mouseover', () => {
+                if (cellNumber === 6) { 
+                    cell.style.backgroundColor = getRandomColor();
+                }
+            });
+
+            cell.addEventListener('click', () => {
+                selectedCell = cell; 
+                colorPicker.click();
+            });
+
+            cell.addEventListener('dblclick', () => {
+                changeRectangleColor(i, j, cell.style.backgroundColor); 
+            });
+
+            row.appendChild(cell);
+        }
+        gridContainer.appendChild(row);
+    }
+}
+
+function getRandomColor() {
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    return randomColor;
+}
+
+function changeRectangleColor(startRow, startCol, color) {
+    for (let i = startRow; i < 6; i++) {
+        for (let j = startCol; j < 6; j++) {
+            const cell = gridContainer.rows[i].cells[j];
+            cell.style.backgroundColor = color;
+        }
+    }
+}
+
+colorPicker.addEventListener('input', () => {
+    if (selectedCell) {
+        selectedCell.style.backgroundColor = colorPicker.value;
     }
 });
