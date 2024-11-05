@@ -1,0 +1,117 @@
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+  
+  body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    background-color: #ebebeb;
+    height: 100vh;
+  }
+  
+  #left-content {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #form-container {
+    width: 40%;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  #submitButton {
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #7e8283;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submitButton:hover {
+    background-color: #9fa3a5;
+  }
+
+  #right-content {
+    background-color: #e8e9f1;
+    position: relative;
+  }
+  
+  
+  h2 {
+    color: #464646;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  input[type='text']{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cecece;
+    border-radius: 8px;
+    color: #464646;
+    font-size: 1em;
+    background-color: #f1f1f1;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type='text']:focus {
+    outline: none;
+    border-color: #4070f4;
+    box-shadow: 0 0 5px rgba(64, 112, 244, 0.3);
+  }
+
+  #modal {
+    display: none;
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%; 
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ff6b6b;
+}
+
+.error-message {
+    font-size: small;
+    color: red;
+    margin: 0;
+}

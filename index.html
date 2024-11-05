@@ -8,6 +8,43 @@
     <title>Усенко А.В. ІМ-23</title>
 </head>
 <body>
-    
+    <body>
+        <div id="left-content">
+          <div id="form-container">
+            <h2>Форма для заповнення</h2>
+            <form class="form" action="index.html">
+              <input type="text" name="name" class="name" placeholder="ПІБ"/>
+              <span class="error-message"></span>
+
+              <input type="text" name="date" class="date" placeholder="Дата народження"/>
+              <span class="error-message"></span>
+
+              <input type="text" name="address" class="address" placeholder="Адреса"/>
+              <span class="error-message"></span>
+
+              <input type="text" name="e-mail" class="e-mail" placeholder="e-mail"/>
+              <span class="error-message"></span>
+
+              <input type="text" name="telegram" class="telegram" placeholder="Telegram"/>
+              <span class="error-message"></span>
+
+              <button id="submitButton" type="submit">Підтвердити</button>
+            </form>
+          </div>
+
+            <div id="modal">
+                <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h2>Введені дані</h2>
+                <p id="data"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="right-content">
+            <div class="cont">
+
+            </div>
+        </div>
 </body>
 </html>
