@@ -25,7 +25,7 @@ formContainer.addEventListener('submit', (event) => {
   const fullNameRegex = /^[А-ЯІЇЄҐ][а-яіїєґ]{1,20} [А-ЯІЇЄҐ]\.[А-ЯІЇЄҐ]\.$/;
   const birthDateRegex = /^\d{2}\.\d{2}\.\d{4}$/;
   const addressRegex = /^м\. [А-ЯІЇЄҐа-яіїєґ]{2,20}$/;
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
   const telegramRegex = /^@[A-Za-z_]\w{4,20}$/;
 
   let incorrectCounter = 0;
