@@ -4,7 +4,7 @@ const closeModal = document.getElementById('close-modal');
 const data = document.getElementById('data');
 const gridContainer = document.getElementById('grid-container');
 const colorPicker = document.getElementById('color-picker');
-
+let selectedCell = null;
 
 formContainer.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -95,20 +95,20 @@ function createTable() {
             const cellNumber = i * 6 + j + 1; 
             cell.textContent = cellNumber;
 
-            cell.addEventListener('mouseover', () => {
-                if (cellNumber === 6) { 
-                    cell.style.backgroundColor = getRandomColor();
-                }
-            });
+            if(cellNumber === 6) {
+              cell.addEventListener('mouseover', () => {
+                  cell.style.backgroundColor = getRandomColor();
+              });
 
-            cell.addEventListener('click', () => {
-                selectedCell = cell; 
-                colorPicker.click();
-            });
+              cell.addEventListener('click', () => {
+                  selectedCell = cell; 
+                  colorPicker.click();
+              });
 
-            cell.addEventListener('dblclick', () => {
-                changeRectangleColor(i, j, cell.style.backgroundColor); 
-            });
+              cell.addEventListener('dblclick', () => {
+                  changeRectangleColor(i, j, cell.style.backgroundColor); 
+              });
+            }
 
             row.appendChild(cell);
         }
